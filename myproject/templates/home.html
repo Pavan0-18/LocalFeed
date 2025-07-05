@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+</head>
+<body>
+  <h2>Welcome to LocalFeed</h2>
+  <p>You are logged in!</p>
+  <button onclick="logout()">Logout</button>
+
+  <script>
+    if (!localStorage.getItem("access")) {
+      window.location.href = "login.html";
+    }
+
+    function logout() {
+      localStorage.removeItem("access");
+      localStorage.removeItem("refresh");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
